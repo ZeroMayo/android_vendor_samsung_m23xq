@@ -596,7 +596,7 @@ PRODUCT_PACKAGES += \
     libsdm-diag \
     libsdm-disp-vndapis \
     libsdmextension \
-    libsec-ril \
+    libsec-ril-impl \
     libsec2qc_conversion \
     libsecureui \
     libsecureui_svcsock \
