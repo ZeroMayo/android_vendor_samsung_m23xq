@@ -203,6 +203,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/m23xq/proprietary/vendor/firmware/wlan/qca_cld/bdwlan.bin1:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/bdwlan.bin1 \
     vendor/samsung/m23xq/proprietary/vendor/firmware/wlan/qca_cld/regdb.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/regdb.bin \
     vendor/samsung/m23xq/proprietary/vendor/firmware/wlanmdsp.mbn:$(TARGET_COPY_OUT_VENDOR)/firmware/wlanmdsp.mbn \
+    vendor/samsung/m23xq/proprietary/vendor/firmware/wlanmdsp_m236l.mbn:$(TARGET_COPY_OUT_VENDOR)/firmware/wlanmdsp_m236l.mbn \
     vendor/samsung/m23xq/proprietary/vendor/lib64/camera/com.qti.tuned.default.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/com.qti.tuned.default.bin \
     vendor/samsung/m23xq/proprietary/vendor/lib64/camera/com.samsung.sensormodule.0_lsi_s5kjn1.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/com.samsung.sensormodule.0_lsi_s5kjn1.bin \
     vendor/samsung/m23xq/proprietary/vendor/lib64/camera/com.samsung.sensormodule.13_sony_imx355_front_full.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/com.samsung.sensormodule.13_sony_imx355_front_full.bin \
