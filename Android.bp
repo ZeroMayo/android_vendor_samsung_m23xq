@@ -100,13 +100,16 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libhardware",
                 "libgsl",
+                "libnativewindow",
                 "vendor.qti.hardware.display.mapper@2.0",
                 "vendor.qti.hardware.display.mapper@3.0",
                 "android.hardware.graphics.mapper@3.0",
-                "vendor.qti.hardware.display.mapperextensions@1.1",
+                "android.hardware.graphics.mapper@2.0",
                 "vendor.qti.hardware.display.mapper@4.0",
                 "android.hardware.graphics.mapper@4.0",
-                "android.hardware.graphics.mapper@2.0",
+                "libgralloc.qti",
+                "libgralloctypes",
+                "vendor.qti.hardware.display.mapperextensions@1.1",
                 "libhidlbase",
                 "libutils",
                 "libdl",
@@ -934,14 +937,14 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/hw/vulkan.adreno.so",
             ],
             shared_libs: [
+                "libcutils",
+                "libz",
                 "libadreno_utils",
                 "libgsl",
-                "libz",
                 "liblog",
                 "libllvm-glnext",
-                "libcutils",
                 "libhardware",
-                "libnativewindow",
+                "libbase",
                 "vendor.qti.hardware.display.mapper@2.0",
                 "android.hardware.graphics.mapper@2.0",
                 "vendor.qti.hardware.display.mapper@3.0",
@@ -949,6 +952,9 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.display.mapperextensions@1.1",
                 "libhidlbase",
                 "libutils",
+                "libnativewindow",
+                "vendor.qti.hardware.display.mapper@4.0",
+                "android.hardware.graphics.mapper@4.0",
                 "libc++",
                 "libc",
                 "libm",
@@ -1052,6 +1058,8 @@ cc_prebuilt_library_shared {
                 "vendor.qti.hardware.display.mapperextensions@1.0",
                 "vendor.qti.hardware.display.mapperextensions@1.1",
                 "libhidlbase",
+                "vendor.qti.hardware.display.mapper@3.0",
+                "android.hardware.graphics.mapper@3.0",
                 "libc++",
                 "libc",
                 "libm",
@@ -1177,8 +1185,6 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libOpenCL.so",
             ],
             shared_libs: [
-                "libcutils",
-                "libvndksupport",
                 "libc++",
                 "libc",
                 "libm",
@@ -1263,59 +1269,6 @@ cc_prebuilt_library_shared {
                 "libc",
                 "libm",
                 "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libadreno_app_profiles",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libadreno_app_profiles.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libhardware",
-                "libutils",
-                "libhidlbase",
-                "libhidlmemory",
-                "android.hidl.memory@1.0",
-                "vendor.qti.qspmhal@1.0",
-                "libdl",
-                "libz",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libadreno_app_profiles.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libhardware",
-                "libutils",
-                "libhidlbase",
-                "libhidlmemory",
-                "android.hidl.memory@1.0",
-                "vendor.qti.qspmhal@1.0",
-                "libdl",
-                "libz",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
             ],
         },
     },
@@ -2455,7 +2408,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libz",
                 "libsync",
-                "libion",
+                "libdmabufheap",
                 "libc++",
                 "libc",
                 "libm",
@@ -2673,6 +2626,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/libllvm-qcom.so",
             ],
             shared_libs: [
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -6663,6 +6617,39 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libadreno_app_profiles",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libadreno_app_profiles.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libhardware",
+                "libutils",
+                "libhidlbase",
+                "libhidlmemory",
+                "android.hidl.memory@1.0",
+                "vendor.qti.qspmhal@1.0",
+                "libdl",
+                "libz",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libaudcal",
     owner: "samsung",
     strip: {
@@ -10316,6 +10303,32 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libOpenCL_adreno",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libOpenCL_adreno.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libvndksupport",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libOpenCv.camera.samsung",
     owner: "samsung",
     strip: {
@@ -12411,6 +12424,32 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "liblivefocus_preview_engine",
                 "libuniplugin",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libllvm-qgl",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libllvm-qgl.so",
+            ],
+            shared_libs: [
+                "libgsl",
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",

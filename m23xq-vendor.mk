@@ -247,7 +247,6 @@ PRODUCT_PACKAGES += \
     libOpenCL \
     libQSEEComAPI \
     libVkLayer_q3dtools \
-    libadreno_app_profiles \
     libadreno_utils \
     libadsprpc \
     libbatching \
@@ -372,6 +371,7 @@ PRODUCT_PACKAGES += \
     libadiertac \
     libadm \
     libadpcmdec \
+    libadreno_app_profiles \
     libaudcal \
     libaudio_log_utils \
     libaudio_soundtrigger \
@@ -488,6 +488,7 @@ PRODUCT_PACKAGES += \
     libHandGesture.camera.samsung \
     libHprFace_GAE_api.camera.samsung \
     libHpr_RecGAE_cvFeature_v1.0.camera.samsung \
+    libOpenCL_adreno \
     libOpenCv.camera.samsung \
     libQTEEConnector_vendor \
     libSNPE \
@@ -562,6 +563,7 @@ PRODUCT_PACKAGES += \
     libkeymaster_helper \
     liblivefocus_preview_engine \
     liblivefocus_preview_interface \
+    libllvm-qgl \
     libloadalgo_stub \
     libmdsprpc \
     libmmcamera_faceproc \
